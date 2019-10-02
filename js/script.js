@@ -26,7 +26,7 @@ let startBtn = document.getElementById('start'),
 let money, time;
 
 // start the program
-startBtn.addEventListener('click', function () {
+startBtn.addEventListener('click', function() {
     time = prompt('Enter the date in the format YYYY-MM-DD', '');
     money = +prompt("What's your monthly budget?", '');
 
@@ -43,14 +43,14 @@ startBtn.addEventListener('click', function () {
 });
 
 // required expenses
-expensesBtn.addEventListener('click', function () {
+expensesBtn.addEventListener('click', function() {
     let sum = 0;
 
     for (let i = 0; i < expensesItem.length; i++) {
         let a = expensesItem[i].value,
             b = expensesItem[++i].value;
 
-        if ( (typeof (a)) === 'string' && (typeof (a)) != null  && (typeof (b)) != null
+        if ((typeof (a)) === 'string' && (typeof (a)) != null  && (typeof (b)) != null
             && a != '' && b != '' && a.length < 50) {
             console.log('All good');
             appData.expenses[a] = b;
@@ -63,7 +63,7 @@ expensesBtn.addEventListener('click', function () {
 });
 
 // optional expenses
-optionalExpensesBtn.addEventListener('click', function () {
+optionalExpensesBtn.addEventListener('click', function() {
     for (let i = 0; i < optionalExpensesItem.length; i++) {
         let opt = optionalExpensesItem[i].value;
         appData.optionalExpenses[i] = opt;
@@ -72,8 +72,8 @@ optionalExpensesBtn.addEventListener('click', function () {
 });
 
 // daily budget calculation
-countBtn.addEventListener('click', function () {
-    if(appData.budget != undefined) {
+countBtn.addEventListener('click', function() {
+    if (appData.budget != undefined) {
         appData.moneyPerDay = (appData.budget / 30).toFixed();
         dayBudgetValue.textContent = appData.moneyPerDay;
 
@@ -92,15 +92,15 @@ countBtn.addEventListener('click', function () {
 });
 
 // possible income items
-incomeItem.addEventListener('input', function () {
+incomeItem.addEventListener('input', function() {
     let items = incomeItem.value;
     appData.income = items.split(', ');
     incomeValue.textContent = appData.income;
 });
 
 // check savings
-checkSavings.addEventListener('click', function () {
-    if(appData.savings == true) {
+checkSavings.addEventListener('click', function() {
+    if (appData.savings == true) {
         appData.savings = false;
     } else {
         appData.savings = true;
@@ -108,8 +108,8 @@ checkSavings.addEventListener('click', function () {
 });
 
 // savings
-sumValue.addEventListener('input', function () {
-    if(appData.savings == true) {
+sumValue.addEventListener('input', function() {
+    if (appData.savings == true) {
         let sum = +sumValue.value,
             percent = +percentValue.value;
 
@@ -121,8 +121,8 @@ sumValue.addEventListener('input', function () {
     }
 });
 
-percentValue.addEventListener('input', function () {
-    if(appData.savings == true) {
+percentValue.addEventListener('input', function() {
+    if (appData.savings == true) {
         let sum = +sumValue.value,
             percent = +percentValue.value;
 
